@@ -1,2 +1,13 @@
 aws-cdk-lib==2.72.1
 constructs>=10.0.0,<11.0.0
+
+# aws-cdk-lib.aws_apprunner==1.141.0
+# aws-cdk-lib==2.72.1
+# constructs<11.0.0,>=10.0.0
+#pip install aws-cdk.aws_apprunner
+
+
+
+
+
+
