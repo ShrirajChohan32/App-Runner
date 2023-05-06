@@ -16,3 +16,6 @@ index.html
 
 # Other random file 
 .DS_Store
+
+# Git ignore file 
+.gitignore
