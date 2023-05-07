@@ -125,23 +125,23 @@ class AppRunnerStack(Stack):
         ### Public Service
         #########
 
-        # service = apprunner.CfnService(self, "Service",
-        #     service_name="nginx",   
-        #     source_configuration=apprunner.CfnService.SourceConfigurationProperty(
-        #         image_repository=apprunner.CfnService.ImageRepositoryProperty(
-        #             image_configuration=apprunner.CfnService.ImageConfigurationProperty(port="8000"),     # App Runner's image port number
-        #             image_identifier="public.ecr.aws/aws-containers/hello-app-runner:latest",   # Public ECR image name
-        #             image_repository_type="ECR_PUBLIC"      #  Defining that the ECR can be pulled publicly 
-        #         )
-        #     ),
-        #     instance_configuration=apprunner.CfnService.        # Creating APP runner instance configuration
-        #     InstanceConfigurationProperty(
-        #         cpu="1024", 
-        #         memory="2048",
-        #     )
-        # )
+        service = apprunner.CfnService(self, "Service",
+            service_name="nginx",   
+            source_configuration=apprunner.CfnService.SourceConfigurationProperty(
+                image_repository=apprunner.CfnService.ImageRepositoryProperty(
+                    image_configuration=apprunner.CfnService.ImageConfigurationProperty(port="8000"),     # App Runner's image port number
+                    image_identifier="public.ecr.aws/aws-containers/hello-app-runner:latest",   # Public ECR image name
+                    image_repository_type="ECR_PUBLIC"      #  Defining that the ECR can be pulled publicly 
+                )
+            ),
+            instance_configuration=apprunner.CfnService.        # Creating APP runner instance configuration
+            InstanceConfigurationProperty(
+                cpu="1024", 
+                memory="2048",
+            )
+        )
 
-        # cdk.CfnOutput(self, "AppRunnerService", value=service.attr_service_url)
+        cdk.CfnOutput(self, "AppRunnerService", value=service.attr_service_url)
 
 
 
